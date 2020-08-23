@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'core';
+  public items = [];
+  public newTask;
+  // tslint:disable-next-line:typedef
+  public addToList() {
+    if (this.newTask === '') {
+    }
+    else {
+      this.items.push(this.newTask);
+      this.newTask = '';
+    }
+  }
+  // tslint:disable-next-line:typedef
+  public deleteTask(index) {
+    this.items.splice(index, 1);
+  }
 }
